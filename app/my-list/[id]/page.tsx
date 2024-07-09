@@ -17,7 +17,6 @@ async function Page({ params }: { params: { id: string } }) {
   const viewer = await currentUser();
   const viewerId = viewer?.id || "";
 
-  // Fetch the user whose list is being viewed
   const user = await prisma.user.findUnique({
     where: { userName: params.id },
   });

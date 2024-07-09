@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ThemeToggler } from "./ThemeToggler";
 import Link from "next/link";
 import GenreDropdown from "./GenreDropdown";
 import SearchInput from "./SearchInput";
@@ -21,13 +20,12 @@ import {
 } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "./ui/button";
-import { NextResponse } from "next/server";
 
 async function Header() {
 
   const user = await currentUser();
   const userName = user?.username || '';
-  
+
 
   return (
     <header className="fixed w-full z-20 top-0 flex items-center justify-between p-5 bg-gradient-to-t from-gray-200/0 via-gray-900/25 to-gray-900">
@@ -52,7 +50,6 @@ async function Header() {
         </div>
         <SearchInput />
         <div className="block">
-        {/* <ThemeToggler/> */}
         </div>
         <SignedOut>
           <Link  href="/sign-in">
@@ -74,6 +71,7 @@ async function DropDownMobile() {
   const user = await currentUser();
   const userName = user?.username || '';
 
+
   return (
     <div className="block sm:hidden">
       <DropdownMenu>
@@ -81,7 +79,7 @@ async function DropDownMobile() {
       <ChevronDown className="ml-1" />
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent>
+      <DropdownMenuContent className="sm:hidden">
         <DropdownMenuLabel>Explore</DropdownMenuLabel>
         <DropdownMenuSeparator />
           <DropdownMenuItem className="cursor-pointer " >

@@ -17,7 +17,6 @@ export default async function Home() {
   const popularTv = await getPopularTv();
   const topRatedTv = await getTopRatedTv();
 
-  
 
   return (
     <main className="">

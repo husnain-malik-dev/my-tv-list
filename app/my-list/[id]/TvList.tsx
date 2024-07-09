@@ -8,6 +8,7 @@ import getImagePath from "@/lib/getImagePath";
 import Link from "next/link";
 import { Trash } from "lucide-react";
 import { handleDeleteFromListAction } from "@/app/actions";
+import Image from "next/image";
 
 type TvListProps = {
   mediaType: string;

@@ -34,3 +34,45 @@ export type Genre = {
 export type Genres = {
   genres: Genre[];
 };
+
+
+export interface Season {
+  season_number: number;
+  air_date?: string;
+}
+
+export interface Crew {
+  job: string;
+  name: string;
+}
+
+export interface Cast {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string;
+}
+
+export interface ShowCredits {
+  crew: Crew[];
+  cast: Cast[];
+}
+
+export interface ShowDetails {
+  id: number;
+  title?: string;
+  name?: string;
+  tagline?: string;
+  vote_average: number;
+  vote_count: number;
+  overview: string;
+  backdrop_path: string;
+  poster_path: string;
+  status: string;
+  runtime?: number;
+  number_of_episodes?: number;
+  release_date?: string;
+  seasons?: Season[];
+  genres: Genre[];
+  created_by?: Crew[];
+}

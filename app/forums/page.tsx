@@ -32,7 +32,7 @@ import Link from "next/link";
           <TableHeader>
             <TableRow>
               <TableHead className="w-[15%] font-semibold">Posted By :</TableHead>
-              <TableHead className="w-[85%] font-semibold">Receny Forums Discussions</TableHead>
+              <TableHead className="w-[85%] font-semibold">Recent Forums Discussions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

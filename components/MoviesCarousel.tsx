@@ -33,12 +33,12 @@ function MoviesCarousel({
     loop: false,
     align: 'start',
     dragFree: true,
-    direction: isVertical ? 'vertical' : 'horizontal',
+    // direction: isVertical ? 'vertical' : 'horizontal',
   });
 
   useEffect(() => {
     if (embla) {
-      // Additional Embla logic if needed
+     
     }
   }, [embla]);
 

@@ -21,10 +21,9 @@ const MoviesCarouselClient = ({
   topRatedTv,
   popularTv,
 }: MoviesCarouselClientProps) => {
-  // Initialize states for each carousel
+  
   const [carouselStates, setCarouselStates] = useState([true, true, true]);
 
-  // Handler to toggle individual carousels
   const handleToggle = (index: number) => {
     setCarouselStates((prev) => {
       const newStates = [...prev];
@@ -33,13 +32,14 @@ const MoviesCarouselClient = ({
     });
   };
 
+
   return (
     <>
       <MoviesCarousel
         movies={carouselStates[0] ? trendingMovies : trendingTv}
         title={carouselStates[0] ? "Trending Movies" : "Trending TV"}
         onToggle={() => handleToggle(0)}
-        isMovie={carouselStates[0]}
+        isMovie={carouselStates[0]} 
       />
       <MoviesCarousel
         movies={carouselStates[1] ? topRatedMovies : topRatedTv}

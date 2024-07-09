@@ -1,4 +1,4 @@
-import { SearchResults } from "@/typings";
+import { SearchResults, ShowDetails, ShowCredits } from "@/typings";
 
 async function fetchFromTMDB(url: URL, cacheTime?: number) {
   url.searchParams.set("include_adult", "false");
@@ -134,7 +134,7 @@ export async function getPopularTv() {
 }
 
 
-export async function getShowById(mediaType: string, externalId: string) {
+export async function getShowById(mediaType: string, externalId: string){
   const url = new URL(`https://api.themoviedb.org/3/${mediaType}/${externalId}`);
 
   const data = await fetchFromTMDB(url);
@@ -163,6 +163,3 @@ export async function getRecommendations(mediaType: string, externalId: string) 
   const data:SearchResults = await fetchFromTMDB(url);
   return data;
 }
-
-
-

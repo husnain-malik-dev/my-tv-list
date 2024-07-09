@@ -14,6 +14,8 @@ export const handleAddToListAction = async (formData: FormData) => {
   const showId = formData.get('showId') as string;
   const showRating = parseInt(formData.get('showRating') as string, 10);
 
+  if(!showRating) return;
+
   const existingRating = await prisma.userlist.findUnique({
     where: {
       userId_mediaType_showId: {
@@ -25,7 +27,7 @@ export const handleAddToListAction = async (formData: FormData) => {
   });
 
   if (existingRating) {
-    // Update the existing rating
+
     await prisma.userlist.update({
       where: {
         userId_mediaType_showId: {
@@ -39,7 +41,7 @@ export const handleAddToListAction = async (formData: FormData) => {
       },
     });
   } else {
-    // Create a new rating
+    
     await prisma.userlist.create({
       data: {
         userId,
@@ -111,8 +113,10 @@ export const addCommentAction = async (formData: FormData) => {
   const c_username = formData.get("username") as string;
   const postId = formData.get("postId") as string;
 
+  if(!text.trim()) return;
+
   if (!text || !c_username || !postId) {
-    throw new Error("Missing required fields");
+    return redirect("/sign-in")
   }
 
   await prisma.comment.create({

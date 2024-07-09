@@ -1,6 +1,6 @@
 import React from "react";
 import ShowDetailSlider from "../../../components/ShowDetailSlider";
-import AddToListBtn  from "../../../components/AddToListBtn";
+import AddToListBtn from "../../../components/AddToListBtn";
 import {
   getShowById,
   getShowCredits,
@@ -20,16 +20,15 @@ import {
 import dayjs from "dayjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { handleAddToListAction } from "@/app/actions";
-import { unstable_noStore } from "next/cache";
+import { ShowDetails, ShowCredits } from "../../../typings";
 import prisma from "../../db/prisma";
 
 async function Page({ params }: { params: { id: string } }) {
-
   const mediaType = params.id[0];
   const showId = params.id[2];
 
-  const data = await getShowById(mediaType, showId);
-  const credits = await getShowCredits(mediaType, showId);
+  const data: ShowDetails = await getShowById(mediaType, showId);
+  const credits: ShowCredits = await getShowCredits(mediaType, showId);
   const similar = await getSimilarShows(mediaType, showId);
   const recommendations = await getRecommendations(mediaType, showId);
 
@@ -84,9 +83,12 @@ async function Page({ params }: { params: { id: string } }) {
                 <input type="hidden" name="showId" value={showId} />
                 <AddToListBtn />
                 <div className="mt-2 w-full gap-1 rounded-xl">
-                  <Select name="showRating"  defaultValue={userRating?.showRating?.toString() || ''}>
+                  <Select
+                    name="showRating"
+                    defaultValue={userRating?.showRating?.toString() || ""}
+                  >
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select"  />
+                      <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="1">(1) Appalling</SelectItem>
@@ -182,16 +184,16 @@ async function Page({ params }: { params: { id: string } }) {
             </div>
           )}
 
-          {data?.created_by?.length > 0 && (
+          {(data?.created_by?.length ?? 0) > 0 && (
             <div>
               <span className="font-bold text-base sm:text-xl md:text-2xl">
                 Creator:{" "}
               </span>
               <span className="text">
-                {data?.created_by?.map((d: any, i: number) => (
+                {data?.created_by?.map((d, i) => (
                   <span key={i} className="ml-2">
                     {d.name}
-                    {data?.created_by.length - 1 !== i && ", "}
+                    {(data?.created_by?.length ?? 0) - 1 !== i && ", "}
                   </span>
                 ))}
               </span>
@@ -204,16 +206,19 @@ async function Page({ params }: { params: { id: string } }) {
             rowID={1}
             title={"Top Cast"}
             movies={credits?.cast}
+            likeBtn={true}
           />
           <ShowDetailSlider
             rowID={2}
             title={"Similar"}
             movies={similar.results}
+            likeBtn={false}
           />
           <ShowDetailSlider
             rowID={3}
             title={"Recommendation"}
             movies={recommendations.results}
+            likeBtn={false}
           />
         </div>
       </div>
@@ -222,5 +227,3 @@ async function Page({ params }: { params: { id: string } }) {
 }
 
 export default Page;
-
-
