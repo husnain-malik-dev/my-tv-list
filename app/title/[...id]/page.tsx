@@ -8,7 +8,6 @@ import {
   getRecommendations,
 } from "@/lib/getMovies";
 import getImagePath from "@/lib/getImagePath";
-import { Button } from "@/components/ui/button";
 import { BookmarkPlus, Star } from "lucide-react";
 import {
   Select,
