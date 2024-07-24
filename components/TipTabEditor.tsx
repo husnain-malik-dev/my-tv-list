@@ -7,6 +7,10 @@ import {
   JSONContent,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import Bold from "@tiptap/extension-bold";
+import Italic from "@tiptap/extension-italic";
+import Strike from "@tiptap/extension-strike";
+import Heading from "@tiptap/extension-heading";
 
 export const Menubar = ({ editor }: { editor: Editor | null }) => {
   if (!editor) {
@@ -75,7 +79,13 @@ export function TipTapEditor({
   json: JSONContent | null;
 }) {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Heading.configure({ levels: [1, 2, 3] }),
+      Bold,
+      Italic,
+      Strike,
+    ],
     content: json ?? "<p>Write your Thoughts.....</p>",
     editorProps: {
       attributes: {
@@ -87,6 +97,7 @@ export function TipTapEditor({
       setJson(json);
     },
   });
+
   return (
     <div>
       <Menubar editor={editor} />

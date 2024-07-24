@@ -997,6 +997,11 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-bold/-/extension-bold-2.4.0.tgz"
   integrity sha512-csnW6hMDEHoRfxcPRLSqeJn+j35Lgtt1YRiOwn7DlS66sAECGRuoGfCvQSPij0TCDp4VCR9if5Sf8EymhnQumQ==
 
+"@tiptap/extension-bold@^2.5.6":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-bold/-/extension-bold-2.5.6.tgz#5a58c83ecce51217bae0a93776b6bd363e73be70"
+  integrity sha512-LevDq/SCCO0xQKIjcFGYedokmKSaBjPS3yrNS/MZepzbDCzY7JQb+DIywRDq2XRymdp/Gs7GT5ItSvWlDIBj+w==
+
 "@tiptap/extension-bubble-menu@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.4.0.tgz"
@@ -1051,6 +1056,11 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-heading/-/extension-heading-2.4.0.tgz"
   integrity sha512-fYkyP/VMo7YHO76YVrUjd95Qeo0cubWn/Spavmwm1gLTHH/q7xMtbod2Z/F0wd6QHnc7+HGhO7XAjjKWDjldaw==
 
+"@tiptap/extension-heading@^2.5.6":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-heading/-/extension-heading-2.5.6.tgz#f2bb7805355ddfe114e26dd6d85c44ddf80d351c"
+  integrity sha512-HPQw6asyiJZCYpIWJRdYJxh9EMLiuo88Nh9jEIs8XeRrNjSOVRLfiiO8g6uc0vKiHnI6nrqV8KfpNO+XyKIIeA==
+
 "@tiptap/extension-history@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@tiptap/extension-history/-/extension-history-2.4.0.tgz"
@@ -1065,6 +1075,11 @@
   version "2.4.0"
   resolved "https://registry.npmjs.org/@tiptap/extension-italic/-/extension-italic-2.4.0.tgz"
   integrity sha512-aaW/L9q+KNHHK+X73MPloHeIsT191n3VLd3xm6uUcFDnUNvzYJ/q65/1ZicdtCaOLvTutxdrEvhbkrVREX6a8g==
+
+"@tiptap/extension-italic@^2.5.6":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-italic/-/extension-italic-2.5.6.tgz#494c36816c6d98165aefb0d5818509cb24fac926"
+  integrity sha512-AwGIIIr3JFj1K4nQfZ1rMFVof0H8zJ2/XYHo4uPxP30S142LRa4mvhfiW51lpJxPSeO6T/dGd3x9nLhkLXT5sw==
 
 "@tiptap/extension-list-item@^2.4.0":
   version "2.4.0"
@@ -1085,6 +1100,11 @@
   version "2.4.0"
   resolved "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.4.0.tgz"
   integrity sha512-pE1uN/fQPOMS3i+zxPYMmPmI3keubnR6ivwM+KdXWOMnBiHl9N4cNpJgq1n2eUUGKLurC2qrQHpnVyGAwBS6Vg==
+
+"@tiptap/extension-strike@^2.5.6":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-strike/-/extension-strike-2.5.6.tgz#2d1be0f6a21810ec3d4f52d0877fa7c19ae61f86"
+  integrity sha512-dh3E/6ex1VSfpdautCyody+J4FuLmOZVcJbOMAEUNRBRMMKQmJZIXgBJrKOJuqnWoWWL00LlvbHnNUDzWYAQoA==
 
 "@tiptap/extension-text@^2.4.0":
   version "2.4.0"
