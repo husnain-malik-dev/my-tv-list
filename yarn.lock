@@ -977,6 +977,11 @@
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
 
+"@tiptap/core@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0.tgz#6097a0c6b1105308d94ae7921bbe88a8486c9c3f"
+  integrity sha512-bFHsNPcEgiHU+C8r+0qk6SGvfrCas8Djz5yv6bOgnfU/oHYmho7D9Gy0WUlzEnEPi21FU0fQ7V/k/iSroR4lMA==
+
 "@tiptap/core@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@tiptap/core/-/core-2.4.0.tgz"
