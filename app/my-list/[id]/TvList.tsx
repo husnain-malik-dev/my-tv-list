@@ -1,14 +1,12 @@
 import React from "react";
-import {
-  TableCell,
-  TableRow,
-} from "@/components/ui/table";
+import { TableCell, TableRow } from "@/components/ui/table";
 import { getShowById } from "@/lib/getMovies";
 import getImagePath from "@/lib/getImagePath";
 import Link from "next/link";
 import { Trash } from "lucide-react";
 import { handleDeleteFromListAction } from "@/app/actions";
 import Image from "next/image";
+import { ShowDetails } from "@/typings";
 
 type TvListProps = {
   mediaType: string;
@@ -19,18 +17,17 @@ type TvListProps = {
   viewerId: string;
 };
 
-type ShowData = {
-  id: string;
-  poster_path: string;
-  title?: string;
-  name?: string;
-  number_of_episodes: number;
-};
+async function TvList({
+  mediaType,
+  showId,
+  i,
+  showRating,
+  userId,
+  viewerId,
+}: TvListProps) {
+  const data: ShowDetails = await getShowById(mediaType, showId);
 
-async function TvList({ mediaType, showId, i, showRating, userId, viewerId }: TvListProps) {
-  const data: ShowData = await getShowById(mediaType, showId);
-
-  let typeOfMedia = mediaType.toUpperCase();
+  const typeOfMedia = mediaType.toUpperCase();
 
   return (
     <TableRow>
@@ -50,15 +47,15 @@ async function TvList({ mediaType, showId, i, showRating, userId, viewerId }: Tv
             ?.split(" ")
             .join("_")}/${data?.id}`}
         >
-          <span>
-            {data?.title || data?.name}
-          </span>
+          <span>{data?.title || data?.name}</span>
         </Link>
       </TableCell>
       <TableCell className="sm:text-lg md:text-xl font-semibold">
         {showRating}
       </TableCell>
-      <TableCell className="hidden sm:flex items-center mt-10">{typeOfMedia}</TableCell>
+      <TableCell className="hidden sm:flex items-center mt-10">
+        {typeOfMedia}
+      </TableCell>
       <TableCell>
         {data?.number_of_episodes ? `${data?.number_of_episodes}` : `${1}`}
       </TableCell>

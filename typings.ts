@@ -16,8 +16,8 @@ export interface Movie {
   video?: boolean;
   vote_average: number;
   vote_count: number;
+  number_of_episodes?: number; // TV show specific
 }
-
 
 export type SearchResults = {
   page: number;
@@ -34,7 +34,6 @@ export type Genre = {
 export type Genres = {
   genres: Genre[];
 };
-
 
 export interface Season {
   season_number: number;

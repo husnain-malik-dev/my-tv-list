@@ -19,7 +19,7 @@ async function fetchFromTMDB(url: URL, cacheTime?: number) {
   };
 
   const response = await fetch(url.toString(), options);
-  const data = (await response.json()) as SearchResults;
+  const data = await response.json();
   return data;
 }
 
@@ -29,7 +29,7 @@ export async function getDiscoverMovies(id?: string, keywords?: string) {
   keywords && url.searchParams.set("with_keywords", keywords);
   id && url.searchParams.set("with_genres", id);
 
-  const data = await fetchFromTMDB(url);
+  const data = await fetchFromTMDB(url) as SearchResults;
   return data.results;
 }
 
@@ -57,7 +57,6 @@ export async function getSearchedMovies(term: string) {
 
   return data.results;
 }
-
 
 export async function getSearchedMulti(term: string) {
   const url = new URL("https://api.themoviedb.org/3/search/multi");
@@ -120,7 +119,7 @@ export async function getTrendingTv() {
 }
 
 export async function getTopRatedTv() {
-  const url = new URL(" https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1");
+  const url = new URL("https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1");
   const data = await fetchFromTMDB(url);
 
   return data.results;
@@ -133,33 +132,26 @@ export async function getPopularTv() {
   return data.results;
 }
 
-
-export async function getShowById(mediaType: string, externalId: string){
+export async function getShowById(mediaType: string, externalId: string): Promise<ShowDetails> {
   const url = new URL(`https://api.themoviedb.org/3/${mediaType}/${externalId}`);
-
   const data = await fetchFromTMDB(url);
   return data;
 }
 
-
-export async function getShowCredits(mediaType: string, externalId: string) {
+export async function getShowCredits(mediaType: string, externalId: string): Promise<ShowCredits> {
   const url = new URL(`https://api.themoviedb.org/3/${mediaType}/${externalId}/credits`);
-
   const data = await fetchFromTMDB(url);
   return data;
 }
 
-
-export async function getSimilarShows(mediaType: string, externalId: string){
+export async function getSimilarShows(mediaType: string, externalId: string): Promise<SearchResults> {
   const url = new URL(`https://api.themoviedb.org/3/${mediaType}/${externalId}/similar`);
-
-  const data: SearchResults = await fetchFromTMDB(url);
+  const data = await fetchFromTMDB(url);
   return data;
 }
 
-export async function getRecommendations(mediaType: string, externalId: string) {
+export async function getRecommendations(mediaType: string, externalId: string): Promise<SearchResults> {
   const url = new URL(`https://api.themoviedb.org/3/${mediaType}/${externalId}/recommendations`);
-
-  const data:SearchResults = await fetchFromTMDB(url);
+  const data = await fetchFromTMDB(url);
   return data;
 }
