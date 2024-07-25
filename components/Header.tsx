@@ -40,7 +40,7 @@ async function Header() {
       </Link>
 
       <div className="flex space-x-2 sm:space-x-4 justify-center items-center md:text-lg">
-        <div><Link className="hidden sm:block" href={`/my-list/${userName}`}>TV List</Link></div>
+        <div><Link className="hidden sm:block" href={userName ? `/my-list/${userName}` : "/sign-in"}>TV List</Link></div>
         <div><Link className="hidden sm:block" href={`/forums`}>Forums</Link></div>
         <div className="hidden sm:block">
         <GenreDropdown />
