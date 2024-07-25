@@ -5,6 +5,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+
 type commentProps = {
     postId: string;
   };
@@ -27,7 +28,7 @@ async function ShowComments({postId} : commentProps) {
             <div className='flex items-center mb-2 justify-between'>
               <div className='flex items-center gap-2'>
               <Avatar>
-                <AvatarImage src={comment.user?.imageUrl || undefined} />
+                <AvatarImage src={comment.user?.imageUrl || undefined} className='object-cover'  />
                 <AvatarFallback>:(</AvatarFallback>
               </Avatar>
               <div className='text-blue-500 font-bold mr-2'>

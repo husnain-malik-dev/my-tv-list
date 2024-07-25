@@ -80,7 +80,7 @@ export function TipTapEditor({
 }) {
   const editor = useEditor({
     extensions: [
-      // StarterKit,
+      StarterKit,  
       Heading.configure({ levels: [1, 2, 3] }),
       Bold,
       Italic,
