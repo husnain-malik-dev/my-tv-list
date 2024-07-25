@@ -6,11 +6,11 @@ import {
   EditorContent,
   JSONContent,
 } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
 import Bold from "@tiptap/extension-bold";
 import Italic from "@tiptap/extension-italic";
 import Strike from "@tiptap/extension-strike";
 import Heading from "@tiptap/extension-heading";
+import StarterKit from '@tiptap/starter-kit'
 
 export const Menubar = ({ editor }: { editor: Editor | null }) => {
   if (!editor) {

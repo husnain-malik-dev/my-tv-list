@@ -977,11 +977,6 @@
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
 
-"@tiptap/core@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0.tgz#6097a0c6b1105308d94ae7921bbe88a8486c9c3f"
-  integrity sha512-bFHsNPcEgiHU+C8r+0qk6SGvfrCas8Djz5yv6bOgnfU/oHYmho7D9Gy0WUlzEnEPi21FU0fQ7V/k/iSroR4lMA==
-
 "@tiptap/core@^2.5.6":
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.5.6.tgz#b8ed9d7398db11ef4d42c3d41cafc0680718273c"
@@ -1091,7 +1086,7 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-text/-/extension-text-2.5.6.tgz#f1b7b41ef36fd4507bd62a75dc21fde5392ae491"
   integrity sha512-dJFARnhuxaLrUP/3PhSE7Wfq/OBRKKW73ZMVrIFhGbVxOdmTZxA12d95U0e+5q6mbPSQFNx8ZYhqnStztRAjBw==
 
-"@tiptap/pm@^2.4.0":
+"@tiptap/pm@^2.2.4":
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-2.5.6.tgz#320e24950cdcd81d18339ec3528094e4d60dd795"
   integrity sha512-0ysx5eXyF5XXfBmo/krMWKvZh6iBnqJ0YVPO/NsGzZcdjBix9lYYDh6nswLvv2mjhPbMEmcMW1ctj3myOwoUbw==
@@ -1115,7 +1110,7 @@
     prosemirror-transform "^1.9.0"
     prosemirror-view "^1.33.9"
 
-"@tiptap/react@^2.4.0":
+"@tiptap/react@^2.2.4":
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/@tiptap/react/-/react-2.5.6.tgz#b1ee9843eb8c2cc00d85f229c539b815e238c88f"
   integrity sha512-n6R5wVug1cGzE0DYWKSkRNBwDJ5ZPwOb21w9PjlEaD2A7yw6JuUBkWaCyfwl3bCzGj8ctZQ5hd9hhnWyJ1UPOg==
@@ -1125,7 +1120,7 @@
     "@types/use-sync-external-store" "^0.0.6"
     use-sync-external-store "^1.2.2"
 
-"@tiptap/starter-kit@^2.5.6":
+"@tiptap/starter-kit@^2.2.4":
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/@tiptap/starter-kit/-/starter-kit-2.5.6.tgz#510132e18e2079c2c3a8924e39a1d1eae22c29fa"
   integrity sha512-yrCMFrnGtpEH0KsJZ383LT+faQfg5JqgvwS9yy1snNmT6mesg0tj+Joyxz4OxPf8TrFgtG8VysgP9MrZKTZk9w==
